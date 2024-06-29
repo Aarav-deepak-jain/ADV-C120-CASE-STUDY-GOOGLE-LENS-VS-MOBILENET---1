@@ -1,87 +1,142 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Real Time Image Identification App</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
   <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
-
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<center>
-  <h3>Case study: Google lens vs Mobilenet</h3>
+  <center>
+    <h3>Case study: Google lens vs Mobilenet</h3>
     <hr>
     <center>
-        <span>
+      <span>
         <img id="google" src="download.jpeg">
         <p>VS</p>
         <h3 class="btn btn-info" id="Mobilenet">Mobilenet</h3>
         <br><br>
-        </span>
+      </span>
     </center>
-    <div class="test_image_and_result col-xs-12">
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="ball.jpg" class="img-responsive"> </li>
-        <div class="test_image_and_result col-xs-12">
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="book.jpg" class="img-responsive"> </li>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <b>Test Image - </b>
+          <img src="ball.jpg" class="img-responsive">
         </div>
-        <div class="test_image_and_result col-xs-12">
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="cup.jpg" class="img-responsive"> </li>
+        <div class="col-sm-4 col-xs-12">
+          <b>Output on GOOGLE LENS - </b>tennis ball
+          <br>
+          <b>Output on Mobilenet Model - </b>Ball
         </div>
-        <div class="test_image_and_result col-xs-12">
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="flag.jpg" class="img-responsive"> </li>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <b>Test Image - </b>
+          <img src="book.jpg" class="img-responsive">
         </div>
-        <div class="test_image_and_result col-xs-12">
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="ganpati.jpg" class="img-responsive"> </li>
+        <div class="col-sm-4 col-xs-12">
+          <b>Output on GOOGLE LENS - </b>EYEWITNESS rock and mineral book
+          <br>
+          <b>Output on Mobilenet Model - </b>Book
         </div>
-        <div class="test_image_and_result col-xs-12">
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="keyboard.jpg" class="img-responsive"> </li>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <b>Test Image - </b>
+          <img src="cup.jpg" class="img-responsive">
         </div>
-        <div class="test_image_and_result col-xs-12">
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="mobile.jpg" class="img-responsive"> </li>
+        <div class="col-sm-4 col-xs-12">
+          <b>Output on GOOGLE LENS - </b>Tea cup
+          <br>
+          <b>Output on Mobilenet Model - </b>Cup
         </div>
-        <div class="test_image_and_result col-xs-12">
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="pen.jpg" class="img-responsive"> </li>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <b>Test Image - </b>
+          <img src="flag.jpg" class="img-responsive">
         </div>
-        <div class="test_image_and_result col-xs-12">
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="specs.jpg" class="img-responsive"> </li>
+        <div class="col-sm-4 col-xs-12">
+          <b>Output on GOOGLE LENS - </b>Indian Flag
+          <br>
+          <b>Output on Mobilenet Model - </b>Flag
         </div>
-        <li class="col-sm-4 col-xs-12"> <b>Test Image - </b>
-        <img src="ttracket.jpg" class="img-responsive"> </li>
-        <h5 class="col-sm-4 col-xs-12" >
-        Output on <b>GOOGLE LENS</b> -
-        <span> </span>
-        </h5>
-        <h5 class="col-sm-4 col-xs-12"> Output on <b>Mobilenet Model </b> 
-        <span> </span>
-        </h5>
-        <div class="mini_result" class="col-xs-12"> <h4>Result - </h4>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <b>Test Image - </b>
+          <img src="keyboard.jpg" class="img-responsive">
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <b>Output on GOOGLE LENS - </b>Keyboard
+          <br>
+          <b>Output on Mobilenet Model - </b>Keyboard
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <b>Test Image - </b>
+          <img src="mobile.jpg" class="img-responsive">
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <b>Output on GOOGLE LENS - </b>Oneplus nord CE 2
+          <br>
+          <b>Output on Mobilenet Model - </b>Phone
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <b>Test Image - </b>
+          <img src="pen.jpg" class="img-responsive">
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <b>Output on GOOGLE LENS - </b>Camlin CD/DVD marker
+          <br>
+          <b>Output on Mobilenet Model - </b>Pen
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <b>Test Image - </b>
+          <img src="specs.jpg" class="img-responsive">
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <b>Output on GOOGLE LENS - </b>Spectacles
+          <br>
+          <b>Output on Mobilenet Model - </b>spectacles
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <b>Test Image - </b>
+          <img src="ttracket.jpg" class="img-responsive">
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <b>Output on GOOGLE LENS - </b>Table tennis raquet
+          <br>
+          <b>Output on Mobilenet Model - </b>TT raquet
+        </div>
+      </div>
+
+      <div class="mini_result">
+        <h4>Result - </h4>
         <hr>
-        <h4> </h4>
-        </div>
-        </div>
-        <br>
-</center>
+        <h4> 
+          After conducting a thorough comparison of the two models by testing them on 9 different objects, I have come to a definitive conclusion regarding their performance. Google Lens has demonstrated a markedly higher level of accuracy compared to MobileNet. Throughout the testing process, Google Lens consistently provided precise and reliable identifications for a wide range of objects, whereas MobileNet's results were notably less accurate. This difference in performance underscores the advanced capabilities and superior accuracy of Google Lens in object recognition tasks.
+        </h4>
+      </div>
+    </div>
+  </center>
+  <div class="copy_right_footer">
+    Created by - Aarav Jain
+  </div>
 
-<div class="copy_right_footer">
-  Created by - Aarav Jain
-</div>
-
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
-
 </html>
-
-
